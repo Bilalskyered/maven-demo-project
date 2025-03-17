@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    
+    stages{
+        stage("build java code"){
+            steps{
+                sh """
+                rm -rf ./*
+                git clone https://github.com/Bilalskyered/maven-demo-project.git
+                cd maven-demo-project
+                mvn package
+                cd target
+                7zip -a maven-demo-project.zip *.jar
+                """
+            }
+
+        }
+    }
+
+}
