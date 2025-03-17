@@ -8,9 +8,9 @@ pipeline{
                 rm -rf ./*
                 git clone https://github.com/Bilalskyered/maven-demo-project.git
                 cd maven-demo-project
-                mvn -X package
+                mvn package
                 cd target
-                7zip -a maven-demo-project.zip *.jar
+                7z a -t7z maven-demo-project.7z *.jar
                 """
             }
 
